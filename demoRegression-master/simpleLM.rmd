@@ -55,6 +55,7 @@ Adjusted $r^2$ for chest model is 0.78, this is larger than adjusted $r^2$ for a
 
 ### Length based on sex 
 
+
 ```{r}
 sexModel <- lm(LENGTH~SEX,data=bears)
 plot(LENGTH~SEX,data=bears)
