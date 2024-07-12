@@ -1,7 +1,7 @@
 ---
 title: "simpleRegress"
-author: "put your name here"
-date: "Fall 2020"
+author: "Sandra Iovino"
+date: "Summer 2024"
 output: html_document
 ---
 
@@ -26,6 +26,79 @@ plot(LENGTH~NECK,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
+
+
+for model length~neck, adjected r^2 = 0.75
+
+## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
+
+### Length based on age 
+
+```{r}
+ageModel <- lm(LENGTH~AGE,data=bears)
+plot(LENGTH~AGE,data=bears)
+abline(ageModel)
+summary.lm(ageModel)
+```
+
+Adjusted $r^2$ for the age model is 0.51, this less than the adjusted $r^2$ for neck, so this model is not as good as the neck model.
+
+### Length based on chest
+
+```{r}
+chestModel <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(chestModel)
+summary.lm(chestModel)
+```
+
+Adjusted $r^2$ for chest model is 0.78, this is larger than adjusted $r^2$ for age, so this model is better for the age model.  
+
+### Length based on sex 
+
+```{r}
+sexModel <- lm(LENGTH~SEX,data=bears)
+plot(LENGTH~SEX,data=bears)
+summary.lm(sexModel)
+```
+
+Adjusted $r^2$ for sex model is -0.08 this less than adjusted $r^2$ for chest, so this model is not as good for the chest model. 
+
+
+### Length based on headlen
+
+```{r}
+headlenModel <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(headlenModel)
+summary.lm(headlenModel)
+```
+
+Adjusted $r^2$ for headlen is 0.84, this larger than adjusted $r^2$ for sex, so this model is better for sex model. 
+
+### Length based on headwth
+
+```{r}
+headwthModel <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(headwthModel)
+summary.lm(headwthModel)
+```
+
+Adjusted $r^2$ for headwth is 0.53, this less than adjusted $r^2$ for headlen, so this model is not that good for the headlen model.
+
+### Length based on weight
+
+```{r}
+weighthModel <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(weighthModel)
+summary.lm(weighthModel)
+```
+
+Adjusted $r^2$ for weight is 0.74, this less than adjusted $r^2$ for headwth, so this model is not that good for the headwth model.
+
+so adjusted $r^2$ for headlen was the highest model out of all of them, which was 0.84.
 
 
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
