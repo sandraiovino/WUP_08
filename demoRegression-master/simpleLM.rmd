@@ -27,7 +27,6 @@ abline(simp)
 summary.lm(simp)
 ```
 
-
 for model length~neck, adjected r^2 = 0.75
 
 ## Compare all models that predict LENGTH other than NECK. Then order them from worst to best by its value of Adjusted-Rsquared (bigger is better), or by RSE (residual standard error) where smaller is better. 
