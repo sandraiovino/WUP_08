@@ -75,6 +75,7 @@ summary.lm(headlenModel)
 
 Adjusted $r^2$ for headlen is 0.84, this larger than adjusted $r^2$ for sex, so this model is better for sex model. 
 
+
 ### Length based on headwth
 
 ```{r}
